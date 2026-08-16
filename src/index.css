@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #060d1f;
+  color: #eef4ff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* App background */
+.app-bg {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(85, 121, 255, 0.28), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(56, 189, 248, 0.12), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(85, 121, 255, 0.1), transparent 60%),
+    #060d1f;
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(85, 121, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 121, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+}
+
+/* Glass card */
+.glass {
+  background: rgba(12, 23, 51, 0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(85, 121, 255, 0.16);
+  border-radius: 1.25rem;
+}
+
+.glass-soft {
+  background: rgba(22, 36, 79, 0.4);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid rgba(85, 121, 255, 0.12);
+  border-radius: 1rem;
+}
+
+.glass-hover {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.glass-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(85, 121, 255, 0.4);
+  box-shadow: 0 18px 50px -20px rgba(85, 121, 255, 0.55);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #3351f5, #1f36d4);
+  color: white;
+  box-shadow: 0 8px 28px -10px rgba(51, 81, 245, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -10px rgba(51, 81, 245, 0.9);
+  filter: brightness(1.08);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background: rgba(85, 121, 255, 0.08);
+  border: 1px solid rgba(85, 121, 255, 0.22);
+  color: #d9e6ff;
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  background: rgba(85, 121, 255, 0.16);
+  border-color: rgba(85, 121, 255, 0.4);
+}
+
+/* Inputs */
+.field {
+  background: rgba(6, 13, 31, 0.6);
+  border: 1px solid rgba(85, 121, 255, 0.2);
+  border-radius: 0.85rem;
+  padding: 0.75rem 1rem;
+  color: #eef4ff;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field::placeholder {
+  color: rgba(217, 230, 255, 0.4);
+}
+.field:focus {
+  border-color: rgba(85, 121, 255, 0.6);
+  box-shadow: 0 0 0 4px rgba(85, 121, 255, 0.16);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(85, 121, 255, 0.3);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 121, 255, 0.5);
+  background-clip: content-box;
+}
+
+/* Utility */
+.text-gradient {
+  background: linear-gradient(120deg, #ffffff 0%, #b3ccff 60%, #82a8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-700 {
+  animation-delay: 0.7s;
+}
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.opacity-0-init {
+  opacity: 0;
+}
+
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+}
